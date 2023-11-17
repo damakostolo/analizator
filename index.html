@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>аналізатор тексту</title>
+    </head>
+    <body>
+        <textarea id="textTa">пробний текст</textarea>
+
+        <div>
+            <input type="checkbox" id="countWords">
+            <label for="countWords">Кількість слів</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="countCharter">
+            <label for="countCharter">Кількість символів</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="countCharterWithoutSpace">
+            <label for="countCharterWithoutSpace">кількість символів без пробілів</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="percentCB">
+            <label for="percentCB">відсотковий вміст кожного символу в тексті</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="vowels">
+            <label for="vowels">кількість голосних</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="consonants">
+            <label for="consonants">кількість приголосних</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="punctuation">
+            <label for="punctuation">кількість розділових знаків</label>
+        </div>
+
+        <h4 id="out">Кількість слів:</h4>
+        <h4 id="percent">повторення символів</h4>
+        <script src="script/script.js"></script>
+
+        <style> 
+            textarea {
+              width: 100%;
+              height: 150px;
+              padding: 12px 20px;
+              box-sizing: border-box;
+              border: 2px solid #ccc;
+              border-radius: 4px;
+              background-color: #f8f8f8;
+              font-size: 16px;
+              resize: none;
+            }
+            </style>
+    </body>
+</html>
