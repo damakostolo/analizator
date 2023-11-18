@@ -17,19 +17,19 @@ let charWoutSpaceOut = document.createElement("h4");
 outputText.after(charWoutSpaceOut);
 
 let countSpace = document.createElement("h4");
-percentText.after(countSpace);
+outputText.after(countSpace);
 
 let showPercentSymbolsOut = document.createElement("h4");
-percentText.after(showPercentSymbolsOut);
+outputText.after(showPercentSymbolsOut);
 
 let vowelsOut = document.createElement("h4");
-percentText.after(vowelsOut);
+outputText.after(vowelsOut);
 
 let consonantsOut = document.createElement("h4");
-percentText.after(consonantsOut);
+outputText.after(consonantsOut);
 
 let punctuationOut = document.createElement("h4");
-percentText.after(punctuationOut);
+outputText.after(punctuationOut);
 
 textArea.addEventListener('input', analizator);
 
@@ -52,13 +52,16 @@ function analizator(){
         let space = countCharterWithoutSpace_fun(textArea.value)
         countSpace.innerText = `Кількість символів без пробілів: ${space}`
     }else{
-        countSpace.innerText = ``;
+        countSpace.innerText = '';
     }
 
     if(percent_cb.checked) {
         let symbolMap = countSymbolsPercent(textArea.value);
-        showPercentSymbolsOut.innerText =`${showPercentSymbols(symbolMap, textArea.value.length)}`;
+        let resultText = showPercentSymbols(symbolMap, textArea.value.length);
+
+        showPercentSymbolsOut.innerText = `Відсотки: ${resultText}`
     }else{ 
+      showPercentSymbolsOut.innerText = ''
     }
 
     if(vowels_cb.checked) {
@@ -83,9 +86,6 @@ function analizator(){
     }
 }
 
-function consonantsCount(text){
-    return text.length - punctuationCount(text) - vowelsCount(text);
-}
 
 function vowelsCount(text){
     let vowelsCount = 0;
@@ -144,7 +144,7 @@ function showPercentSymbols(symbols, size){
         resultText += `${ch} ${count} ${percent}% <->`;
     }
 
-    percentText.innerText = resultText;
+    return resultText;
 }
 
 function showPercentSymbolsTable(symbols, size){
