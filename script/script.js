@@ -57,11 +57,9 @@ function analizator(){
 
     if(percent_cb.checked) {
         let symbolMap = countSymbolsPercent(textArea.value);
-        let resultText = showPercentSymbols(symbolMap, textArea.value.length);
-
-        showPercentSymbolsOut.innerText = `Відсотки: ${resultText}`
+        let resultText = showPercentSymbolsTable(symbolMap, textArea.value.length);
     }else{ 
-      showPercentSymbolsOut.innerText = ''
+      percentText.innerHTML = ''
     }
 
     if(vowels_cb.checked) {
@@ -162,7 +160,7 @@ function showPercentSymbolsTable(symbols, size){
         resultText += "</tr>"
     }
     resultText += "</table>";
-    percentText.innerHTML = resultText;
+    return percentText.innerHTML = resultText;
 }
 
 function searchWords_indexOf(text){
