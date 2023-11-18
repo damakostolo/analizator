@@ -19,6 +19,9 @@ outputText.after(charWoutSpaceOut);
 let countSpace = document.createElement("h4");
 percentText.after(countSpace);
 
+let showPercentSymbolsOut = document.createElement("h4");
+percentText.after(showPercentSymbolsOut);
+
 let vowelsOut = document.createElement("h4");
 percentText.after(vowelsOut);
 
@@ -54,8 +57,8 @@ function analizator(){
 
     if(percent_cb.checked) {
         let symbolMap = countSymbolsPercent(textArea.value);
-        showPercentSymbolsTable(symbolMap, textArea.value.length);
-    }else{ percent.remove()
+        showPercentSymbolsOut.innerText =`${showPercentSymbols(symbolMap, textArea.value.length)}`;
+    }else{ 
     }
 
     if(vowels_cb.checked) {
